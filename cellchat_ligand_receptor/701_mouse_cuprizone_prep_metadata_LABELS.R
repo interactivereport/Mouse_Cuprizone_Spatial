@@ -24,7 +24,7 @@ write.table(gene_info, file.path(data_dir,"genes.tsv"), col.names=F, row.names=F
 
 #Format barcodes
 barcodes <- fread(file.path(data_dir, "barcodes.tsv"))
-barcodes <- barcodes %>% filter(V1 != "0") #Not sure why this got included
+barcodes <- barcodes %>% filter(V1 != "0") #Formatting issue during extraction from h5ad
 write.table(barcodes, file.path(data_dir,"barcodes.tsv"), col.names=F, row.names=F, sep="\t", quote=F)
 
 #Format matrix
